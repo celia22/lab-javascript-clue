@@ -72,9 +72,62 @@ const suspectsArray = [
      
   ];
 
+
+
 // Rooms Collection
-const roomsArray = ["Dining Room", "Conservatory", "Kitchen", "Study", "Library", "Study", 'Billiard Room',
-"Lounge","Ballroom","Hall","Spa","Living Room","Observatory","Theater","Guest House","Patio"];
+const roomsArray = [
+   {
+      "name": "Dining Room",   
+   },
+
+   {
+      "name": "Conservatory",
+   },
+
+   {
+      "name": "Kitchen",
+   },
+
+   {
+      "name": "Study",
+   },
+
+   {
+      "name": "Library",
+   },
+
+   {
+      "name": "Billiard Room",
+      
+   },
+
+   {
+      "name": "Lounge",
+   },
+
+   {
+      "name": "Ballroom",
+   },
+
+   {
+      "name": "Spa",
+   },
+   {
+      "name": "Living Room",
+   },
+   {
+      "name": "Observatory",
+   },
+   {
+      "name": "Theater",
+   },
+   {
+      "name": "Guest House",
+   },
+   {
+      "name": "Patio",
+   },
+];
 
 
 
@@ -135,22 +188,22 @@ const selectRandom = (arr) => {
 
 //selectRandom(suspectsArray)
 
-const pickMystery = (obj) => {
+const pickMystery = () => {
   let mysteryCombination = {
     suspect: selectRandom(suspectsArray),
-    room: selectRandom(roomsArray),
-    weapon: selectRandom(weaponsArray)
-  }
+    weapon: selectRandom(weaponsArray),
+    room: selectRandom(roomsArray)
+  };
 return mysteryCombination
 };
 
-console.log(pickMystery());
+//console.log(pickMystery());
 
 
 // ITERATION 3
 
-const revealMystery = (obj) => {
-   return `${obj.suspect.firstName} ${obj.suspect.lastName} killed Mr. Boddy using the ${obj.weapon.name} in the ${obj.room}!`
- };
+const revealMystery = (object) => {
+   return `${object.suspect.firstName} ${object.suspect.lastName} killed Mr. Boddy using the ${object.weapon.name} in the ${object.room.name}!`
+ }; 
   
-revealMystery(pickMystery())
+revealMystery(pickMystery());
